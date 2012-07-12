@@ -16,7 +16,7 @@ on “[Why Vagrant?](http://vagrantup.com/docs/getting-started/why.html)”
 
 First, make sure your development machine has [VirtualBox](http://www.virtualbox.org) installed. 
 After this, [download the appropriate Vagrant package for your OS](http://downloads.vagrantup.com) and install that. If you're not on Mac OS X or Windows, you'll need
-to add `/opt/vagrant/bin` to your `PATH`. After this, you're ready to go!  Here are some common install steps
+to add `/opt/vagrant/bin` to your `PATH`. After this, you're ready to go!  Here are some common install steps these may need to be altered for your environment.
 ## Debian/Ubuntu
     apt-get install virtualbox vagrant
 or 
@@ -26,7 +26,12 @@ or
     dkpg -i virtualbox-4.1_4.1.18-78361~Ubuntu~precise_amd64.deb
     dpkg -i vagrant_1.0.3_x86_64.deb
 ## CentOS/Redhat
-    yum install virutalbox vagrant
+    wget http://download.virtualbox.org/virtualbox/rpm/el/virtualbox.repo -O /etc/yum.repos.d/virtualbox.repo
+    yum install unzip VirtualBox-4.1 make automake gcc gcc-c++ kernel-devel -y
+    export KERN_DIR=/usr/src/kernels/2.6.32-279.1.1.el6.x86_64
+    /etc/init.d/vboxdrv setup
+    wget http://files.vagrantup.com/packages/eb590aa3d936ac71cbf9c64cf207f148ddfc000a/vagrant_1.0.3_x86_64.rpm
+    rpm -ivh vagrant_1.0.3_x86_64.rpm
 ## Mac OS X with [Homebrew](http://mxcl.github.com/homebrew/)
     wget http://download.virtualbox.org/virtualbox/4.1.18/VirtualBox-4.1.18-78361-OSX.dmg
     brew install ruby
