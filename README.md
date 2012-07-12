@@ -20,6 +20,7 @@ to add `/opt/vagrant/bin` to your `PATH`. After this, you're ready to go!  Here 
 ## Debian/Ubuntu
     apt-get install virtualbox vagrant
 or 
+
     wget http://files.vagrantup.com/packages/eb590aa3d936ac71cbf9c64cf207f148ddfc000a/vagrant_1.0.3_x86_64.deb
     wget http://download.virtualbox.org/virtualbox/4.1.18/virtualbox-4.1_4.1.18-78361~Ubuntu~precise_amd64.deb
     dkpg -i virtualbox-4.1_4.1.18-78361~Ubuntu~precise_amd64.deb
@@ -42,4 +43,4 @@ Note: The above `vagrant up` command will also trigger Vagrant to download the
 `centos56_64` box via the specified URL. Vagrant only does this if it detects that
 the box doesn't already exist on your system.
 
-Updated from demo of [S. Zachariah Sprackett found here](https://github.com/zsprackett/) [http://devops.me/2011/10/05/vagrant/](http://devops.me/2011/10/05/vagrant/)
+Updated from demo of [S. Zachariah Sprackett](https://github.com/zsprackett/) found here [http://devops.me/2011/10/05/vagrant/](http://devops.me/2011/10/05/vagrant/)
