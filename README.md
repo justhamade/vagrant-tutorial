@@ -34,8 +34,8 @@ or
 
 To build this vagrant cluster:
 
+    vagrant box add base http://puppetlabs.s3.amazonaws.com/pub/centos56_64.box
     git clone git://github.com/justhamade/vagrant-tutorial.git
-    vagrant init centos56_64 http://puppetlabs.s3.amazonaws.com/pub/centos56_64.box
     cd vagrant-tutorial/web-cluster
     vagrant up
 
