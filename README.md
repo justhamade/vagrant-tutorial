@@ -30,7 +30,7 @@ or
 ## Mac OS X with [Homebrew](http://mxcl.github.com/homebrew/)
     wget http://download.virtualbox.org/virtualbox/4.1.18/VirtualBox-4.1.18-78361-OSX.dmg
     brew install ruby
-    gem install vagrant
+    sudo gem install vagrant
 
 To build this vagrant cluster:
 
