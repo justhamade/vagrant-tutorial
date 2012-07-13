@@ -2,6 +2,7 @@ Vagrant::Config.run do |config|
   config.vm.define :lb do |lb_config|
       lb_config.vm.network:bridged
       lb_config.vm.box  = "centos56_64"
+      lb_config.vm.box_url = "http://puppetlabs.s3.amazonaws.com/pub/centos56_64.box"
       lb_config.vm.forward_port("nginx",80,8080)
       lb_config.ssh.timeout = 300
       lb_config.ssh.max_tries = 300
@@ -14,6 +15,7 @@ Vagrant::Config.run do |config|
   config.vm.define :web do |web_config|
       web_config.vm.network:bridged
       web_config.vm.box  = "centos56_64"
+      web_config.vm.box_url = "http://puppetlabs.s3.amazonaws.com/pub/centos56_64.box"
       web_config.vm.forward_port("apache",8081,8081)
       web_config.vm.forward_port("varnish",8082,8082)
       web_config.ssh.timeout = 300
@@ -27,6 +29,7 @@ Vagrant::Config.run do |config|
   config.vm.define :db do |db_config|
       db_config.vm.network:bridged
       db_config.vm.box  = "centos56_64"
+      db_config.vm.box_url = "http://puppetlabs.s3.amazonaws.com/pub/centos56_64.box"
       db_config.ssh.timeout = 300
       db_config.ssh.max_tries = 300
       db_config.vm.provision  :puppet do  |puppet|
