@@ -33,8 +33,9 @@ or
     wget http://files.vagrantup.com/packages/eb590aa3d936ac71cbf9c64cf207f148ddfc000a/vagrant_1.0.3_x86_64.rpm
     rpm -ivh vagrant_1.0.3_x86_64.rpm
 ## Mac OS X with [Homebrew](http://mxcl.github.com/homebrew/)
-    # Go to https://www.virtualbox.org/wiki/Downloads to get the latest Virutal Box
-    wget http://download.virtualbox.org/virtualbox/4.2.8/VirtualBox-4.2.8-83876-OSX.dmg
+    LATEST_VBOX=$(curl http://download.virtualbox.org/virtualbox/LATEST.TXT)
+    VBOX_FILE=$(curl -s http://download.virtualbox.org/virtualbox/${LATEST_VBOX}/ | grep -o -P 'VirtualBox-4.2.8-[0-9]+-OSX.dmg' index.html | head -n 1)
+    wget http://download.virtualbox.org/virtualbox/${LATEST_VBOX}/${VBOX_FILE}
     brew install ruby
     sudo gem install vagrant
 
